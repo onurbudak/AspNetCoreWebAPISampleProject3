@@ -12,7 +12,7 @@ namespace Business.Abstract
         IDataResult<Guid> Create(Customer entity);
         IResult Update(Customer entity);
         IResult Delete(Customer entity);
-        IDataResult<List<Customer>> GetAll();
+        IDataResult<List<CustomerDto>> GetAll();
         IDataResult<Customer> Get(Guid id);
         IResult Validate(Guid id);
     }

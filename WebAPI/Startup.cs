@@ -1,5 +1,6 @@
 using Business.Abstract;
 using Business.Concrete;
+using Business.Mapping;
 using Core.DependencyResolvers;
 using Core.Extensions;
 using Core.Utilities.IoC;
@@ -42,7 +43,7 @@ namespace WebAPI
             //    new CoreModule()
             //});
 
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddAutoMapper(typeof(MappingProfile));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

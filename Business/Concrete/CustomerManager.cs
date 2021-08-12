@@ -45,11 +45,11 @@ namespace Business.Concrete
 
 
         [LogAspect(typeof(FileLogger))]
-        public IDataResult<List<Customer>> GetAll()
+        public IDataResult<List<CustomerDto>> GetAll()
         {
             var data = _customerDal.GetAll();
-            //List<CustomerDto> result = _mapper.Map<List<CustomerDto>>(data);
-            return new SuccessDataResult<List<Customer>>(data);
+            List<CustomerDto> result = _mapper.Map<List<CustomerDto>>(data);
+            return new SuccessDataResult<List<CustomerDto>>(result);
         }
 
         public IDataResult<Customer> Get(Guid id)
